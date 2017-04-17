@@ -1,4 +1,4 @@
-package ylrc.controller;
+package main.java.ylrc.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
