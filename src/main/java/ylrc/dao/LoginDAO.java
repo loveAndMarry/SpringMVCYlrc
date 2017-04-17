@@ -1,4 +1,4 @@
-package com.ylrc.dao;
+package ylrc.dao;
 public interface LoginDAO {
 	/*
 	 * register

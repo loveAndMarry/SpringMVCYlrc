@@ -1,8 +1,8 @@
-package com.ylrc.dao;
+package ylrc.dao;
 
 import java.util.List;
 
-import com.ylrc.model.User;
+import ylrc.model.User;
 
 public interface UserDAO {
 	

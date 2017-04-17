@@ -1,4 +1,4 @@
-package com.ylrc.model;
+package ylrc.model;
 
 import java.util.*;
 

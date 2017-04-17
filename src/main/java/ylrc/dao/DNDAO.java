@@ -1,8 +1,7 @@
-package com.ylrc.dao;
-
+package ylrc.dao;
 import java.util.List;
 
-import com.ylrc.model.DynamicNews;
+import ylrc.model.DynamicNews;
 
 public interface DNDAO {
 	
