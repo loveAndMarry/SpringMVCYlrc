@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -240,12 +241,13 @@
 }
 </style>
 
+	<script src="dist/js/vendor/jquery.min.js"></script>
 
-<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
-<!--[if lt IE 9]>
-      <script src="js/vendor/html5shiv.js"></script>
-      <script src="js/vendor/respond.min.js"></script>
-    <![endif]-->
+
+
+	<script src="js/check.js"></script>
+	<script src="dist/js/vendor/html5shiv.js"></script>
+	<script src="dist/js/vendor/respond.min.js"></script>
 </head>
 <body>
 
@@ -255,25 +257,25 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-body">
-					<form class="form-horizontal">
+					<form class="form-horizontal" id="regForm"  method="post"  action="registerCheck" >
 						<span class="heading">用户注册</span>
 						<div class="form-group">
-							<input type="email" class="form-control" id="inputEmail3"
+							<input type="email" class="form-control" id="uEmail" name="uEmail"
 								placeholder="邮箱"> <i class="fa fa-user"></i>
 						</div>
 						<div class="form-group">
-							<input type="text" class="form-control" id="inputEmail3"
+							<input type="text" class="form-control" id="yzm"
 								placeholder="验证码"> <i class="fa fa-user"></i>
 						</div>
 						<div class="form-group help">
-							<input type="password" class="form-control" id="inputPassword3"
+							<input type="password" class="form-control" id="uPassWord" name="uPassWord"
 								placeholder="密　码"> <i class="fa fa-lock"></i> <a
 								href="#" class="fa fa-question-circle"></a>
 						</div>
 
 						<div class="form-group">
-							<button type="button" class="btn btn-default">发送验证码</button>
-							<button type="submit" class="btn btn-default">注册</button>
+							<button type="button" class="btn btn-default" id="sendYzm">发送验证码</button>
+							<button type="button" class="btn btn-default" id="register">注册</button>
 						</div>
 					</form>
 				</div>
@@ -285,7 +287,6 @@
 	<!--注册栏结束 -->
 
 
-
 	<!-- 登陆栏 -->
 	<div class="modal fade" id="modal-container-908378" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true">
@@ -293,15 +294,15 @@
 			<div class="modal-content">
 
 				<div class="modal-body">
-					<form class="form-horizontal">
+					<form class="form-horizontal" method="post" action="loginCheck" id="loginForm" name="loginForm">
 						<span class="heading">用户登录</span>
 						<div class="form-group">
-							<input type="email" class="form-control" id="inputEmail3"
-								placeholder="用户名或电子邮件"> <i class="fa fa-user"></i>
+							<input type="text" class="form-control" id="user" name="user"
+								   placeholder="用户名或电子邮件"> <i class="fa fa-user"></i>
 						</div>
 						<div class="form-group help">
-							<input type="password" class="form-control" id="inputPassword3"
-								placeholder="密　码"> <i class="fa fa-lock"></i> <a
+							<input type="password" class="form-control" id="password" name="password"
+								   placeholder="密码"> <i class="fa fa-lock"></i> <a
 								href="#" class="fa fa-question-circle"></a>
 						</div>
 						<div class="form-group">
@@ -310,8 +311,8 @@
 								<label for="checkbox1"></label>
 							</div>
 							<span class="text">Remember me</span>
-							<button type="submit" class="btn btn-default">登录</button>
-						</div>
+							<button type="button" class="btn btn-default" id="loginButton" >登录</button>
+				</div>
 					</form>
 				</div>
 				<div class="modal-footer"></div>
@@ -338,7 +339,7 @@
 
 
 	<!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
-	<script src="dist/js/vendor/jquery.min.js"></script>
+
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="dist/js/vendor/video.js"></script>
 	<script src="dist/js/flat-ui.min.js"></script>

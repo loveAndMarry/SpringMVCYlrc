@@ -3,32 +3,32 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by xxxxx on 2017/4/19.
+ * Created by 18401606107 on 2017/4/29.
  */
 @Entity
-@Table(name = "tb_salary", schema = "ylrc", catalog = "")
+@Table(name = "tb_salary", schema = "my_ylrc", catalog = "")
 public class TbSalaryEntity {
-    private int sid;
-    private int slevel;
+    private int salaryId;
+    private String salaryNumRange;
 
     @Id
-    @Column(name = "sid", nullable = false)
-    public int getSid() {
-        return sid;
+    @Column(name = "SalaryId", nullable = false)
+    public int getSalaryId() {
+        return salaryId;
     }
 
-    public void setSid(int sid) {
-        this.sid = sid;
+    public void setSalaryId(int salaryId) {
+        this.salaryId = salaryId;
     }
 
     @Basic
-    @Column(name = "slevel", nullable = false)
-    public int getSlevel() {
-        return slevel;
+    @Column(name = "SalaryNumRange", nullable = false, length = 20)
+    public String getSalaryNumRange() {
+        return salaryNumRange;
     }
 
-    public void setSlevel(int slevel) {
-        this.slevel = slevel;
+    public void setSalaryNumRange(String salaryNumRange) {
+        this.salaryNumRange = salaryNumRange;
     }
 
     @Override
@@ -38,16 +38,17 @@ public class TbSalaryEntity {
 
         TbSalaryEntity that = (TbSalaryEntity) o;
 
-        if (sid != that.sid) return false;
-        if (slevel != that.slevel) return false;
+        if (salaryId != that.salaryId) return false;
+        if (salaryNumRange != null ? !salaryNumRange.equals(that.salaryNumRange) : that.salaryNumRange != null)
+            return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = sid;
-        result = 31 * result + slevel;
+        int result = salaryId;
+        result = 31 * result + (salaryNumRange != null ? salaryNumRange.hashCode() : 0);
         return result;
     }
 }
