@@ -3,54 +3,76 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by xxxxx on 2017/4/19.
+ * Created by 18401606107 on 2017/4/29.
  */
 @Entity
-@Table(name = "tb_useraccount", schema = "ylrc", catalog = "")
+@Table(name = "tb_useraccount", schema = "my_ylrc", catalog = "")
 public class TbUseraccountEntity {
-    private int uid;
-    private int uPhoneNum;
-    private String uEmail;
-    private String uPassWord;
+    private int userId;
+    private String userPhone;
+    private String userEmail;
+    private String userPsd;
+    private String userVercode;
+    private Integer userState;
 
     @Id
-    @Column(name = "uid", nullable = false)
-    public int getUid() {
-        return uid;
+    @Column(name = "userId", nullable = false)
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
-    }
-
-    @Basic
-    @Column(name = "uPhoneNum", nullable = false)
-    public int getuPhoneNum() {
-        return uPhoneNum;
-    }
-
-    public void setuPhoneNum(int uPhoneNum) {
-        this.uPhoneNum = uPhoneNum;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     @Basic
-    @Column(name = "uEmail", nullable = false, length = 20)
-    public String getuEmail() {
-        return uEmail;
+    @Column(name = "userPhone", nullable = true, length = 20)
+    public String getUserPhone() {
+        return userPhone;
     }
 
-    public void setuEmail(String uEmail) {
-        this.uEmail = uEmail;
+    public void setUserPhone(String userPhone) {
+        this.userPhone = userPhone;
     }
 
     @Basic
-    @Column(name = "uPassWord", nullable = false, length = 20)
-    public String getuPassWord() {
-        return uPassWord;
+    @Column(name = "userEmail", nullable = true, length = 30)
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setuPassWord(String uPassWord) {
-        this.uPassWord = uPassWord;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
+
+    @Basic
+    @Column(name = "userPsd", nullable = true, length = 30)
+    public String getUserPsd() {
+        return userPsd;
+    }
+
+    public void setUserPsd(String userPsd) {
+        this.userPsd = userPsd;
+    }
+
+    @Basic
+    @Column(name = "userVercode", nullable = true, length = 10)
+    public String getUserVercode() {
+        return userVercode;
+    }
+
+    public void setUserVercode(String userVercode) {
+        this.userVercode = userVercode;
+    }
+
+    @Basic
+    @Column(name = "userState", nullable = true)
+    public Integer getUserState() {
+        return userState;
+    }
+
+    public void setUserState(Integer userState) {
+        this.userState = userState;
     }
 
     @Override
@@ -60,20 +82,24 @@ public class TbUseraccountEntity {
 
         TbUseraccountEntity that = (TbUseraccountEntity) o;
 
-        if (uid != that.uid) return false;
-        if (uPhoneNum != that.uPhoneNum) return false;
-        if (uEmail != null ? !uEmail.equals(that.uEmail) : that.uEmail != null) return false;
-        if (uPassWord != null ? !uPassWord.equals(that.uPassWord) : that.uPassWord != null) return false;
+        if (userId != that.userId) return false;
+        if (userPhone != null ? !userPhone.equals(that.userPhone) : that.userPhone != null) return false;
+        if (userEmail != null ? !userEmail.equals(that.userEmail) : that.userEmail != null) return false;
+        if (userPsd != null ? !userPsd.equals(that.userPsd) : that.userPsd != null) return false;
+        if (userVercode != null ? !userVercode.equals(that.userVercode) : that.userVercode != null) return false;
+        if (userState != null ? !userState.equals(that.userState) : that.userState != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = uid;
-        result = 31 * result + uPhoneNum;
-        result = 31 * result + (uEmail != null ? uEmail.hashCode() : 0);
-        result = 31 * result + (uPassWord != null ? uPassWord.hashCode() : 0);
+        int result = userId;
+        result = 31 * result + (userPhone != null ? userPhone.hashCode() : 0);
+        result = 31 * result + (userEmail != null ? userEmail.hashCode() : 0);
+        result = 31 * result + (userPsd != null ? userPsd.hashCode() : 0);
+        result = 31 * result + (userVercode != null ? userVercode.hashCode() : 0);
+        result = 31 * result + (userState != null ? userState.hashCode() : 0);
         return result;
     }
 }
