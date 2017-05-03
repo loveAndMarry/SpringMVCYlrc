@@ -20,7 +20,7 @@ $(document).ready(function() {
                     data:JSON.stringify({"user":$("#user").val(),"password":$("#password").val()}),
                     success:function (data) {
                         if(data.result=="success"){
-                            window.location.href="/"
+                            window.location.href="/homePage"
                         }else{
                             alert("用户名或密码错误");
                         }
@@ -42,9 +42,16 @@ $(document).ready(function () {
         var x=$("#uEmail").val();
         var y=$("#yzm").val();
         var z=$("#uPassWord").val();
-        if(x==""||x==null||y==""||y==null||z==""||z==null)
+        var phone=document.getElementById("uPhone");
+        var p=$("#uPhone").val();
+        if(x==""||x==null||y==""||y==null||z==""||z==null||p==""||p==null)
         {
             alert("输入信息不能为空！！");
+            return;
+        }
+        else if(phone.value.length!=11||!/^1[3|5|8][0-9]\d{4,8}$/.test(phone.value))
+        {
+            alert("手机号码格式有误");
             return;
         }
         else{
@@ -54,7 +61,7 @@ $(document).ready(function () {
                 dataType:'json',
                 contentType:'application/json',
                 cache:false,
-                data:JSON.stringify({"userEmail":$("#uEmail").val(),"passWord":$("#uPassWord").val(),"yzm":$("#yzm").val()}),
+                data:JSON.stringify({"userPhone":$("#uPhone").val(),"userEmail":$("#uEmail").val(),"passWord":$("#uPassWord").val(),"yzm":$("#yzm").val()}),
                 success:function(data) {
                     if (data.result == "success") {
                         alert("注册成功！");

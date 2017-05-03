@@ -264,8 +264,12 @@
 								placeholder="邮箱"> <i class="fa fa-user"></i>
 						</div>
 						<div class="form-group">
+							<input type="email" class="form-control" id="uPhone" name="uPhone"
+								   placeholder="手机号码"> <i class="fa fa-user"></i>
+						</div>
+						<div class="form-group">
 							<input type="text" class="form-control" id="yzm"
-								placeholder="验证码"> <i class="fa fa-user"></i>
+								placeholder="邮件验证码"> <i class="fa fa-user"></i>
 						</div>
 						<div class="form-group help">
 							<input type="password" class="form-control" id="uPassWord" name="uPassWord"
@@ -274,7 +278,7 @@
 						</div>
 
 						<div class="form-group">
-							<button type="button" class="btn btn-default" id="sendYzm">发送验证码</button>
+							<button type="button" class="btn btn-default" id="sendYzm">发送邮件验证码</button>
 							<button type="button" class="btn btn-default" id="register">注册</button>
 						</div>
 					</form>

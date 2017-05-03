@@ -3,26 +3,26 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by xxxxx on 2017/4/19.
+ * Created by 18401606107 on 2017/5/1.
  */
 @Entity
-@Table(name = "tb_hobby", schema = "ylrc", catalog = "")
+@Table(name = "tb_hobby", schema = "new_ylrc", catalog = "")
 public class TbHobbyEntity {
-    private int hid;
+    private int hobbyId;
     private String hobby;
 
     @Id
-    @Column(name = "hid", nullable = false)
-    public int getHid() {
-        return hid;
+    @Column(name = "hobbyId", nullable = false)
+    public int getHobbyId() {
+        return hobbyId;
     }
 
-    public void setHid(int hid) {
-        this.hid = hid;
+    public void setHobbyId(int hobbyId) {
+        this.hobbyId = hobbyId;
     }
 
     @Basic
-    @Column(name = "hobby", nullable = false, length = 10)
+    @Column(name = "hobby", nullable = false, length = 30)
     public String getHobby() {
         return hobby;
     }
@@ -38,7 +38,7 @@ public class TbHobbyEntity {
 
         TbHobbyEntity that = (TbHobbyEntity) o;
 
-        if (hid != that.hid) return false;
+        if (hobbyId != that.hobbyId) return false;
         if (hobby != null ? !hobby.equals(that.hobby) : that.hobby != null) return false;
 
         return true;
@@ -46,7 +46,7 @@ public class TbHobbyEntity {
 
     @Override
     public int hashCode() {
-        int result = hid;
+        int result = hobbyId;
         result = 31 * result + (hobby != null ? hobby.hashCode() : 0);
         return result;
     }

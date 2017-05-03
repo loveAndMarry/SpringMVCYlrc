@@ -3,16 +3,16 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by 18401606107 on 2017/4/29.
+ * Created by 18401606107 on 2017/5/1.
  */
 @Entity
-@Table(name = "tb_job", schema = "my_ylrc", catalog = "")
+@Table(name = "tb_job", schema = "new_ylrc", catalog = "")
 public class TbJobEntity {
     private int jobId;
-    private String jobName;
+    private String job;
 
     @Id
-    @Column(name = "JobId", nullable = false)
+    @Column(name = "jobId", nullable = false)
     public int getJobId() {
         return jobId;
     }
@@ -22,13 +22,13 @@ public class TbJobEntity {
     }
 
     @Basic
-    @Column(name = "JobName", nullable = false, length = 20)
-    public String getJobName() {
-        return jobName;
+    @Column(name = "job", nullable = false, length = 20)
+    public String getJob() {
+        return job;
     }
 
-    public void setJobName(String jobName) {
-        this.jobName = jobName;
+    public void setJob(String job) {
+        this.job = job;
     }
 
     @Override
@@ -39,7 +39,7 @@ public class TbJobEntity {
         TbJobEntity that = (TbJobEntity) o;
 
         if (jobId != that.jobId) return false;
-        if (jobName != null ? !jobName.equals(that.jobName) : that.jobName != null) return false;
+        if (job != null ? !job.equals(that.job) : that.job != null) return false;
 
         return true;
     }
@@ -47,7 +47,7 @@ public class TbJobEntity {
     @Override
     public int hashCode() {
         int result = jobId;
-        result = 31 * result + (jobName != null ? jobName.hashCode() : 0);
+        result = 31 * result + (job != null ? job.hashCode() : 0);
         return result;
     }
 }

@@ -3,16 +3,16 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by 18401606107 on 2017/4/29.
+ * Created by 18401606107 on 2017/5/1.
  */
 @Entity
-@Table(name = "tb_salary", schema = "my_ylrc", catalog = "")
+@Table(name = "tb_salary", schema = "new_ylrc", catalog = "")
 public class TbSalaryEntity {
     private int salaryId;
     private String salaryNumRange;
 
     @Id
-    @Column(name = "SalaryId", nullable = false)
+    @Column(name = "salaryId", nullable = false)
     public int getSalaryId() {
         return salaryId;
     }
@@ -22,7 +22,7 @@ public class TbSalaryEntity {
     }
 
     @Basic
-    @Column(name = "SalaryNumRange", nullable = false, length = 20)
+    @Column(name = "salaryNumRange", nullable = true, length = 30)
     public String getSalaryNumRange() {
         return salaryNumRange;
     }

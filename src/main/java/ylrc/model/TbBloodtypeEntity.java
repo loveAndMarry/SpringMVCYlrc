@@ -3,32 +3,32 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by 18401606107 on 2017/4/29.
+ * Created by 18401606107 on 2017/5/1.
  */
 @Entity
-@Table(name = "tb_bloodtype", schema = "my_ylrc", catalog = "")
+@Table(name = "tb_bloodtype", schema = "new_ylrc", catalog = "")
 public class TbBloodtypeEntity {
-    private int typeId;
-    private String typeName;
+    private int bloodtypeId;
+    private String bloodtype;
 
     @Id
-    @Column(name = "typeId", nullable = false)
-    public int getTypeId() {
-        return typeId;
+    @Column(name = "bloodtypeId", nullable = false)
+    public int getBloodtypeId() {
+        return bloodtypeId;
     }
 
-    public void setTypeId(int typeId) {
-        this.typeId = typeId;
+    public void setBloodtypeId(int bloodtypeId) {
+        this.bloodtypeId = bloodtypeId;
     }
 
     @Basic
-    @Column(name = "typeName", nullable = false, length = 20)
-    public String getTypeName() {
-        return typeName;
+    @Column(name = "bloodtype", nullable = false, length = 30)
+    public String getBloodtype() {
+        return bloodtype;
     }
 
-    public void setTypeName(String typeName) {
-        this.typeName = typeName;
+    public void setBloodtype(String bloodtype) {
+        this.bloodtype = bloodtype;
     }
 
     @Override
@@ -38,16 +38,16 @@ public class TbBloodtypeEntity {
 
         TbBloodtypeEntity that = (TbBloodtypeEntity) o;
 
-        if (typeId != that.typeId) return false;
-        if (typeName != null ? !typeName.equals(that.typeName) : that.typeName != null) return false;
+        if (bloodtypeId != that.bloodtypeId) return false;
+        if (bloodtype != null ? !bloodtype.equals(that.bloodtype) : that.bloodtype != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = typeId;
-        result = 31 * result + (typeName != null ? typeName.hashCode() : 0);
+        int result = bloodtypeId;
+        result = 31 * result + (bloodtype != null ? bloodtype.hashCode() : 0);
         return result;
     }
 }

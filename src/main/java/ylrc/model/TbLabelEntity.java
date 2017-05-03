@@ -3,32 +3,32 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by xxxxx on 2017/4/19.
+ * Created by 18401606107 on 2017/5/1.
  */
 @Entity
-@Table(name = "tb_label", schema = "ylrc", catalog = "")
+@Table(name = "tb_label", schema = "new_ylrc", catalog = "")
 public class TbLabelEntity {
-    private int lid;
-    private String cCharacter;
+    private int labelId;
+    private String label;
 
     @Id
-    @Column(name = "lid", nullable = false)
-    public int getLid() {
-        return lid;
+    @Column(name = "labelId", nullable = false)
+    public int getLabelId() {
+        return labelId;
     }
 
-    public void setLid(int lid) {
-        this.lid = lid;
+    public void setLabelId(int labelId) {
+        this.labelId = labelId;
     }
 
     @Basic
-    @Column(name = "cCharacter", nullable = false, length = 10)
-    public String getcCharacter() {
-        return cCharacter;
+    @Column(name = "label", nullable = true, length = 30)
+    public String getLabel() {
+        return label;
     }
 
-    public void setcCharacter(String cCharacter) {
-        this.cCharacter = cCharacter;
+    public void setLabel(String label) {
+        this.label = label;
     }
 
     @Override
@@ -38,16 +38,16 @@ public class TbLabelEntity {
 
         TbLabelEntity that = (TbLabelEntity) o;
 
-        if (lid != that.lid) return false;
-        if (cCharacter != null ? !cCharacter.equals(that.cCharacter) : that.cCharacter != null) return false;
+        if (labelId != that.labelId) return false;
+        if (label != null ? !label.equals(that.label) : that.label != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = lid;
-        result = 31 * result + (cCharacter != null ? cCharacter.hashCode() : 0);
+        int result = labelId;
+        result = 31 * result + (label != null ? label.hashCode() : 0);
         return result;
     }
 }

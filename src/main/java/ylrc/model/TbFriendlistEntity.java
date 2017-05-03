@@ -3,43 +3,43 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by xxxxx on 2017/4/19.
+ * Created by 18401606107 on 2017/5/1.
  */
 @Entity
-@Table(name = "tb_friendlist", schema = "ylrc", catalog = "")
+@Table(name = "tb_friendlist", schema = "new_ylrc", catalog = "")
 public class TbFriendlistEntity {
-    private int fid;
-    private Integer uid1;
-    private Integer uid2;
+    private int flId;
+    private int userIdA;
+    private int userIdB;
 
     @Id
-    @Column(name = "fid", nullable = false)
-    public int getFid() {
-        return fid;
+    @Column(name = "flId", nullable = false)
+    public int getFlId() {
+        return flId;
     }
 
-    public void setFid(int fid) {
-        this.fid = fid;
-    }
-
-    @Basic
-    @Column(name = "uid1", nullable = true)
-    public Integer getUid1() {
-        return uid1;
-    }
-
-    public void setUid1(Integer uid1) {
-        this.uid1 = uid1;
+    public void setFlId(int flId) {
+        this.flId = flId;
     }
 
     @Basic
-    @Column(name = "uid2", nullable = true)
-    public Integer getUid2() {
-        return uid2;
+    @Column(name = "userIdA", nullable = false)
+    public int getUserIdA() {
+        return userIdA;
     }
 
-    public void setUid2(Integer uid2) {
-        this.uid2 = uid2;
+    public void setUserIdA(int userIdA) {
+        this.userIdA = userIdA;
+    }
+
+    @Basic
+    @Column(name = "userIdB", nullable = false)
+    public int getUserIdB() {
+        return userIdB;
+    }
+
+    public void setUserIdB(int userIdB) {
+        this.userIdB = userIdB;
     }
 
     @Override
@@ -49,18 +49,18 @@ public class TbFriendlistEntity {
 
         TbFriendlistEntity that = (TbFriendlistEntity) o;
 
-        if (fid != that.fid) return false;
-        if (uid1 != null ? !uid1.equals(that.uid1) : that.uid1 != null) return false;
-        if (uid2 != null ? !uid2.equals(that.uid2) : that.uid2 != null) return false;
+        if (flId != that.flId) return false;
+        if (userIdA != that.userIdA) return false;
+        if (userIdB != that.userIdB) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = fid;
-        result = 31 * result + (uid1 != null ? uid1.hashCode() : 0);
-        result = 31 * result + (uid2 != null ? uid2.hashCode() : 0);
+        int result = flId;
+        result = 31 * result + userIdA;
+        result = 31 * result + userIdB;
         return result;
     }
 }

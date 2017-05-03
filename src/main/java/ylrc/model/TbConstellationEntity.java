@@ -3,16 +3,16 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by 18401606107 on 2017/4/29.
+ * Created by 18401606107 on 2017/5/1.
  */
 @Entity
-@Table(name = "tb_constellation", schema = "my_ylrc", catalog = "")
+@Table(name = "tb_constellation", schema = "new_ylrc", catalog = "")
 public class TbConstellationEntity {
     private int constellationId;
     private String constellationName;
 
     @Id
-    @Column(name = "ConstellationId", nullable = false)
+    @Column(name = "constellationId", nullable = false)
     public int getConstellationId() {
         return constellationId;
     }
@@ -22,7 +22,7 @@ public class TbConstellationEntity {
     }
 
     @Basic
-    @Column(name = "ConstellationName", nullable = false, length = 20)
+    @Column(name = "constellationName", nullable = true, length = 30)
     public String getConstellationName() {
         return constellationName;
     }

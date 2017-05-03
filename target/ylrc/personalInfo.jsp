@@ -54,7 +54,7 @@ $(document).ready(function(){
 			   </ul>
              </nav>
            </div>
-           <a class="brand" href="index2.jsp"><img src="images/t1.png" alt="logo"></a>
+           <a class="brand" href="index.jsp"><img src="images/t1.png" alt="logo"></a>
            <div class="pull-right">
           	<nav class="navbar nav_bottom" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -71,7 +71,7 @@ $(document).ready(function(){
 		    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 		      		        <ul class="nav navbar-nav nav_1">
 		      
-		            <li><a href="index2.jsp">主页</a></li>
+		            <li><a href="index.jsp">主页</a></li>
 		            <li><a href="personalInfo.jsp">个人资料</a></li>
 		    		<li><a href="myFriend.jsp">我的好友</a></li>
 		            <li><a href="watchTV.jsp">观看直播</a></li>
@@ -88,7 +88,7 @@ $(document).ready(function(){
   <div class="container">
    <div class="breadcrumb1">
      <ul>
-        <a href="index2.jsp"><i class="fa fa-home home_1"></i></a>
+        <a href="index.jsp"><i class="fa fa-home home_1"></i></a>
         <span class="divider">&nbsp;|&nbsp;</span>
         <li class="current-page">Information</li>
      </ul>

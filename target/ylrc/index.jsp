@@ -71,7 +71,7 @@ $(document).ready(function(){
 		    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 		        <ul class="nav navbar-nav nav_1">
 		      
-		            <li><a href="index.jsp">主页</a></li>
+		            <li><a href="index.jsp">${loginUser.userEmail}</a></li>
 		            <li><a href="personalInfo.jsp">个人资料</a></li>
 		    		 <li><a href="myFriend.jsp">我的好友</a></li>
 
@@ -89,7 +89,7 @@ $(document).ready(function(){
 <div class="banner">
   <div class="container">
     <div class="banner_info">
-      <h3>缘来如此，缘来是你</h3>
+      <h3>缘来如此</h3>
       <a href="" class="hvr-shutter-out-horizontal" style="background:#ff8888">开启直播！</a>
     </div>
   </div>
