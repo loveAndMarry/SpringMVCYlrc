@@ -68,7 +68,7 @@ $(document).ready(function () {
                         window.location.href = "/login"
                     }
                     else if (data.result == "fail") {
-                        alert("注册失败，该邮箱已注册过了！");
+                        alert("注册失败，邮箱或手机号已注册过了！");
                     }
                     else if (data.result == "failYZM")
                     {

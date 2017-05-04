@@ -46,11 +46,10 @@ public class MainController {
         List<TbUseraccountEntity> userList = userRepository.findAll();
         for (int i = 0; i < userList.size(); i++) {
             TbUseraccountEntity u = userList.get(i);
-            if (u.getUserEmail().equals(userEmail)) {
+            if (u.getUserEmail().equals(userEmail)||u.getUserPhone().equals(userPhone)) {
                 json.put("result", "fail");
                 return json;
             }
-
         }
 
         mailRegister mr=new mailRegister();
