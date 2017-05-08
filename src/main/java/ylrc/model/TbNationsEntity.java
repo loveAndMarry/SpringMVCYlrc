@@ -3,10 +3,10 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by 18401606107 on 2017/4/29.
+ * Created by 18401606107 on 2017/5/5.
  */
 @Entity
-@Table(name = "tb_nations", schema = "my_ylrc", catalog = "")
+@Table(name = "tb_nations", schema = "new_ylrc", catalog = "")
 public class TbNationsEntity {
     private int nationId;
     private String nationName;

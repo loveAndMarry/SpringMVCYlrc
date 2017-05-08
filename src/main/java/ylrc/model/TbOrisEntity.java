@@ -3,10 +3,10 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by 18401606107 on 2017/4/29.
+ * Created by 18401606107 on 2017/5/5.
  */
 @Entity
-@Table(name = "tb_oris", schema = "my_ylrc", catalog = "")
+@Table(name = "tb_oris", schema = "new_ylrc", catalog = "")
 public class TbOrisEntity {
     private int oriId;
     private String orilName;

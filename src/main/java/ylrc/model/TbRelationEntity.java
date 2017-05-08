@@ -3,24 +3,14 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by 18401606107 on 2017/4/29.
+ * Created by 18401606107 on 2017/5/5.
  */
 @Entity
-@Table(name = "tb_relation", schema = "my_ylrc", catalog = "")
+@Table(name = "tb_relation", schema = "new_ylrc", catalog = "")
 @IdClass(TbRelationEntityPK.class)
 public class TbRelationEntity {
-    private int userAId;
     private int userBId;
-
-    @Id
-    @Column(name = "userAId", nullable = false)
-    public int getUserAId() {
-        return userAId;
-    }
-
-    public void setUserAId(int userAId) {
-        this.userAId = userAId;
-    }
+    private int userAId;
 
     @Id
     @Column(name = "userBId", nullable = false)
@@ -32,6 +22,16 @@ public class TbRelationEntity {
         this.userBId = userBId;
     }
 
+    @Id
+    @Column(name = "userAId", nullable = false)
+    public int getUserAId() {
+        return userAId;
+    }
+
+    public void setUserAId(int userAId) {
+        this.userAId = userAId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -39,16 +39,16 @@ public class TbRelationEntity {
 
         TbRelationEntity that = (TbRelationEntity) o;
 
-        if (userAId != that.userAId) return false;
         if (userBId != that.userBId) return false;
+        if (userAId != that.userAId) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = userAId;
-        result = 31 * result + userBId;
+        int result = userBId;
+        result = 31 * result + userAId;
         return result;
     }
 }

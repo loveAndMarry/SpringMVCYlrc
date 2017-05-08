@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,25 +14,58 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-form.js" type="text/javascript"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href='https://fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
 <!----font-Awesome----->
-<link href="css/font-awesome.css" rel="stylesheet"> 
+<link href="css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/select2.min.css" type="text/css" />
+	<script type="text/javascript" src="js/select2.min.js"></script>
+	<script src="js/userInfo.js"></script>
 <!----font-Awesome----->
 <script>
 $(document).ready(function(){
-    $(".dropdown").hover(            
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
-            $(this).toggleClass('open');        
-        },
-        function() {
-            $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
-            $(this).toggleClass('open');       
-        }
-    );
+        $(".dropdown").hover(
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
+                $(this).toggleClass('open');
+            },
+            function() {
+                $('.dropdown-menu', this).stop( true, true ).slideUp("fast");
+                $(this).toggleClass('open');
+            }
+        );
+    $("#trueName").val("${userInfoEntity.userTrusName}");
+    $("#editName").val("${userInfoEntity.userNickName}");
+    $("#idNum").val("${userInfoEntity.userIDnum}");
+    $("#height").val("${userInfoEntity.userHeight}");
+    $("#weight").val("${userInfoEntity.userWeight}");
+    $("#idNum").val("${userInfoEntity.userIDnum}");
+    $("#province").val("${userInfoEntity.userAddress}");
+    var birDate="${userInfoEntity.userBirthday}".split("-");
+//    $("#date").val(birDate[birDate.length-1]);
+   // alert(birDate[2]);
+    var day=birDate[2].split(" ");
+    $("#date").val(day[0]);
+    $("#month").val(birDate[1]);
+    $("#year").val(birDate[0]);
+    $("input[name='sex'][value='${userInfoEntity.userSex}']").attr("checked",true);
+    $("input[name='sexLove'][value='${userInfoEntity.userSexOri}']").attr("checked",true);
+    $("#bloodType").val("${userInfoEntity.userBloodType}");
+    $("#job").val("${userInfoEntity.userJob}");
+    $("#salary").val("${userInfoEntity.userSalary}");
+    $("#introductory").val("${userInfoEntity.userIntroduction}");
+    var hobbySelect="${userInfoEntity.userHobby}".split(",");
+    $("#hobby").select2().val(hobbySelect).trigger('change');
+
+    var myLabelSelect="${userInfoEntity.userLabel}".split(",");
+    $("#myLabel").select2().val(myLabelSelect).trigger('change');
+
+    var hopeLabelSelect="${userInfoEntity.userHopeLabel}".split(",");
+    $("#hopeLabel").select2().val(hopeLabelSelect).trigger('change');
+
 });
 </script>
 </head>
@@ -71,7 +105,7 @@ $(document).ready(function(){
 		    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 		      		        <ul class="nav navbar-nav nav_1">
 		      
-		            <li><a href="index.jsp">主页</a></li>
+		            <li><a href="homePage">主页</a></li>
 		            <li><a href="personalInfo.jsp">个人资料</a></li>
 		    		<li><a href="myFriend.jsp">我的好友</a></li>
 		            <li><a href="watchTV.jsp">观看直播</a></li>
@@ -95,27 +129,27 @@ $(document).ready(function(){
    </div>
    <div class="services">
    	  <div class="col-sm-6 login_left">
-	     <form>
+	     <form method="post" action="infoSave" id="infoForm" name="infoForm">
 	  	    <div class="form-group">
-		      <label for="edit-name">真实姓名 <span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="trueName" name="trueName" value="" size="60" maxlength="60" class="form-text required">
+		      <label for="edit-name">真实姓名(必填) <span class="form-required" title="This field is required.">*</span></label>
+		      <input type="text" id="trueName" name="trueName" size="60" maxlength="60" class="form-text required">
 		    </div>
 		    <div class="form-group">
-		      <label for="edit-name">昵称 <span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="editName" name="editName" value="" size="60" maxlength="60" class="form-text required">
+		      <label for="edit-name">昵称(必填)  <span class="form-required" title="This field is required.">*</span></label>
+		      <input type="text" id="editName" name="editName"  size="60" maxlength="60" class="form-text required">
 		    </div>
 		   <div class="form-group">
-		      <label for="edit-name">手机 <span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="phone" name="phone" value="" size="60" maxlength="60" class="form-text required">
+		      <label for="edit-name">身份证号码(必填)  <span class="form-required" title="This field is required.">*</span></label>
+		      <input type="text" id="idNum" name="idNum" size="60" maxlength="60" class="form-text required">
 		    </div>
 		    
 		    <div class="form-group">
-		      <label for="edit-name">身高 <span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="height" name="height" value="" size="20" maxlength="20" class="form-text required">
+		      <label for="edit-name">身高<span class="form-required" title="This field is required.">*</span></label>
+				<input type="text" id="height" name="height" size="20" maxlength="20" class="form-text required">
 		    </div>
 		    <div class="form-group">
-		      <label for="edit-name">体重<span class="form-required" title="This field is required.">*</span></label>
-		      <input type="text" id="weight" name="weight" value="" size="20" maxlength="20" class="form-text required">
+		      <label for="edit-name">体重(kg)<span class="form-required" title="This field is required.">*</span></label>
+		      <input type="text" id="weight" name="weight" size="20" maxlength="20" class="form-text required">
 		    </div>
 		    <div class="age_select">
 		    <label for="edit-pass">所在地区<span class="form-required" title="This field is required.">*</span></label>
@@ -123,43 +157,22 @@ $(document).ready(function(){
 		         <div class="col-sm-4 form_box">
                   <div class="select-block1">
                     <select id="province">	
-	                    <option value="">北京</option>
-	                   
+	                    <option value="北京市昌平区">北京市昌平区</option>
+						<option value="北京市海淀区">北京市海淀区</option>
+						<option value="北京市东城区">北京市东城区</option>
+						<option value="北京市西城区">北京市西城区</option>
+						<option value="北京市丰台区">北京市丰台区</option>
+						<option value="北京市崇文区">北京市崇文区</option>
+						<option value="北京市大兴区">北京市大兴区</option>
+						<option value="北京市朝阳区">北京市朝阳区</option>
+						<option value="北京市宣武区">北京市宣武区</option>
+						<option value="北京市石景山区">北京市石景山区</option>
+						<option value="北京市延庆县">北京市延庆县</option>
+						<option value="北京市房山区">北京市房山区</option>
                     </select>
                   </div>
             </div>
-            <div class="col-sm-4 form_box2">
-                   <div class="select-block1">
-                    <select id="area">
-	                    <option value="">海淀区</option>
-	                    <option value="1">朝阳区</option>
-	                    <option value="2">东城区</option>
-	                    <option value="3">西城区</option>
-	                    <option value="4">。。。</option>
-	                    <option value="5">。。。</option>
-	                    <option value="6">。。。</option>
-	                    <option value="7">。。。</option>
-	                    <option value="8">。。。</option>
-	                    <option value="9">。。。</option>
-	                    <option value="10">。。。</option>
-	                    <option value="11">。。。</option>
-	                    <option value="12">。。。</option>
-                    </select>
-                  </div>
-                 </div>
-                 <div class="col-sm-4 form_box1">
-                   <div class="select-block1">
-                    <select id="street">
-	                    <option value="">南阳路</option>
-	                    <option value="1980">和风路</option>
-	                    <option value="1981">。。。</option>
-	                    <option value="1982">。。。</option>
-	                    <option value="1983">。。。</option>
-	                    <option value="1984">。。。</option>
 
-                    </select>
-                   </div>
-                  </div>
                   <div class="clearfix"> </div>
                  </div>
 		    </div>
@@ -169,7 +182,7 @@ $(document).ready(function(){
 		         <div class="col-sm-4 form_box">
                   <div class="select-block1">
                     <select id="date">	
-	                    <option value="">Date</option>
+	                    <option value="">日</option>
 	                    <option value="1">1</option>
 	                    <option value="2">2</option>
 	                    <option value="3">3</option>
@@ -207,26 +220,26 @@ $(document).ready(function(){
             <div class="col-sm-4 form_box2">
                    <div class="select-block1">
                     <select id="month">
-	                    <option value="">Month</option>
-	                    <option value="1">January</option>
-	                    <option value="2">February</option>
-	                    <option value="3">March</option>
-	                    <option value="4">April</option>
-	                    <option value="5">May</option>
-	                    <option value="6">June</option>
-	                    <option value="7">July</option>
-	                    <option value="8">August</option>
-	                    <option value="9">September</option>
-	                    <option value="10">October</option>
-	                    <option value="11">November</option>
-	                    <option value="12">December</option>
+	                    <option value="">月</option>
+	                    <option value="01">01</option>
+	                    <option value="02">02</option>
+	                    <option value="03">03</option>
+	                    <option value="04">04</option>
+	                    <option value="05">05</option>
+	                    <option value="06">06</option>
+	                    <option value="07">07</option>
+	                    <option value="08">08</option>
+	                    <option value="09">09</option>
+	                    <option value="10">10</option>
+	                    <option value="11">11</option>
+	                    <option value="12">12</option>
                     </select>
                   </div>
                  </div>
                  <div class="col-sm-4 form_box1">
                    <div class="select-block1">
                     <select id="year">
-	                    <option value="">Year</option>
+	                    <option value="">年</option>
 	                    <option value="1980">1980</option>
 	                    <option value="1981">1981</option>
 	                    <option value="1982">1982</option>
@@ -274,11 +287,12 @@ $(document).ready(function(){
                 <div class="col-sm-5">
                     <div class="radios">
 				        <label for="radio-01" class="label_radio">
-				            <input type="radio" id="sexM" checked="" name="sex" value="male"> Male
+				            <input type="radio"  checked="" name="sex" value="男"> 男
 				        </label>
 				        <label for="radio-02" class="label_radio">
-				            <input type="radio" id="sexFe" name="sex" value="female"> Female
+				            <input type="radio" name="sex" value="女"> 女
 				        </label>
+
 	                </div>
                 </div>
                 <div class="clearfix"> </div>
@@ -291,27 +305,181 @@ $(document).ready(function(){
                 <div class="col-sm-5">
                     <div class="radios">
 				        <label for="radio-01" class="label_radio">
-				            <input type="radio" id="loveM" name="sexLove" value="male"> Male
+				            <input type="radio"  name="sexLove" value="1"> 男
 				        </label>
 				        <label for="radio-02" class="label_radio">
-				            <input type="radio" id="loveFe" name="sexLove" checked="" value="female"> Female
+				            <input type="radio"  name="sexLove" checked="" value="2"> 女
 				        </label>
+						<label for="radio-03" class="label_radio">
+							<input type="radio" name="sexLove" value="3"> 双向
+						</label>
 	                </div>
                 </div>
                 <div class="clearfix"> </div>
              </div>
-		    
-		     <div class="form-group">
-		      <label for="edit-name">爱好 <span class="form-required" title="This field is required."></span></label>
-		      <input type="text" id="edit-name" name="hobby" value="" size="60" maxlength="60" class="form-text required">
-		    </div>
+
+			 <div class="age_select">
+				 <label for="edit-pass">血型 职业 薪资<span class="form-required" title="This field is required.">*</span></label>
+				 <div class="age_grid">
+					 <div class="col-sm-4 form_box">
+						 <div class="select-block1">
+							 <select id="bloodType">
+								 <option value="">血型</option>
+								 <option value="1">A</option>
+								 <option value="2">B</option>
+								 <option value="3">AB</option>
+								 <option value="4">O</option>
+							 </select>
+						 </div>
+					 </div>
+					 <div class="col-sm-4 form_box2">
+						 <div class="select-block1">
+							 <select id="job">
+								 <option value="">职业</option>
+								 <option value="1">工人</option>
+								 <option value="2">教师</option>
+								 <option value="3">记者</option>
+								 <option value="4">艺人</option>
+								 <option value="5">厨师</option>
+								 <option value="6">医生</option>
+								 <option value="7">军人</option>
+								 <option value="8">律师</option>
+								 <option value="9">会计</option>
+								 <option value="10">经商</option>
+								 <option value="11">作家</option>
+								 <option value="12">导游</option>
+								 <option value="13">画家</option>
+								 <option value="14">警察</option>
+								 <option value="15">公务员</option>
+								 <option value="16">运动员</option>
+								 <option value="17">科学家</option>
+								 <option value="18">工程师</option>
+								 <option value="19">翻译</option>
+							 </select>
+						 </div>
+					 </div>
+					 <div class="col-sm-4 form_box1">
+						 <div class="select-block1">
+							 <select id="salary">
+								 <option value="">薪资</option>
+								 <option value="1">小于3000</option>
+								 <option value="2">3000-5000</option>
+								 <option value="3">5000-10000</option>
+								 <option value="4">10000-50000</option>
+								 <option value="5">大于50000</option>
+							 </select>
+						 </div>
+					 </div>
+					 <div class="clearfix"> </div>
+				 </div>
+			 </div>
+
+			 <div class="age_select">
+				 <div class="age_grid">
+					 <div class="col-sm-4 form_box">
+						 <div class="select-block1">
+							 <select id="hobby"  multiple="multiple" class="form-control">
+								 <optgroup label="爱好">
+								 <option value="1">读书</option>
+								 <option value="2">绘画</option>
+								 <option value="3">书法</option>
+								 <option value="4">乐器</option>
+									 <option value="5">篮球</option>
+									 <option value="6">足球</option>
+									 <option value="7">健身</option>
+									 <option value="8">跑步</option>
+									 <option value="9">户外运动</option>
+									 <option value="10">美食</option>
+									 <option value="11">旅游</option>
+									 <option value="12">音乐</option>
+									 <option value="13">饮茶</option>
+									 <option value="14">影视剧</option>
+									 <option value="15">戏剧</option>
+									 <option value="16">文学</option>
+									 <option value="17">哲学</option>
+									 <option value="18">睡觉</option>
+									 <option value="19">游戏</option>
+									 <option value="20">作画</option>
+								 </optgroup>
+							 </select>
+						 </div>
+					 </div>
+					 <div class="col-sm-4 form_box2">
+						 <div class="select-block1">
+
+							 <select id="myLabel"  multiple="multiple" class="form-control">
+								 <optgroup label="个性标签">
+
+								 <option value="1">阳光</option>
+								 <option value="2">帅气</option>
+								 <option value="3">美丽</option>
+								 <option value="4">端庄</option>
+								 <option value="5">大方</option>
+								 <option value="6">贤惠</option>
+								 <option value="7">乐观</option>
+								 <option value="8">独立</option>
+								 <option value="9">健康</option>
+								 <option value="10">担当</option>
+								 <option value="11">稳重</option>
+								 <option value="12">低调</option>
+								 <option value="13">简单</option>
+								 <option value="14">麦霸</option>
+								 <option value="15">音乐达人</option>
+								 <option value="16">运动达人</option>
+								 <option value="17">健身达人</option>
+								 <option value="18">学霸</option>
+								 <option value="19">高大</option>
+									 <option value="20">好厨艺</option>
+									 <option value="21">旅游达人</option>
+									 <option value="22">美食达人</option>
+									 <option value="23">游戏达人</option>
+									 <option value="24">软萌</option>
+								 </optgroup>
+							 </select>
+						 </div>
+					 </div>
+					 <div class="col-sm-4 form_box1">
+						 <div class="select-block1">
+							 <select id="hopeLabel"  multiple="multiple" class="form-control">
+								 <optgroup label="我喜欢">
+									 <option value="1">阳光</option>
+									 <option value="2">帅气</option>
+									 <option value="3">美丽</option>
+									 <option value="4">端庄</option>
+									 <option value="5">大方</option>
+									 <option value="6">贤惠</option>
+									 <option value="7">乐观</option>
+									 <option value="8">独立</option>
+									 <option value="9">健康</option>
+									 <option value="10">担当</option>
+									 <option value="11">稳重</option>
+									 <option value="12">低调</option>
+									 <option value="13">简单</option>
+									 <option value="14">麦霸</option>
+									 <option value="15">音乐达人</option>
+									 <option value="16">运动达人</option>
+									 <option value="17">健身达人</option>
+									 <option value="18">学霸</option>
+									 <option value="19">高大</option>
+									 <option value="20">好厨艺</option>
+									 <option value="21">旅游达人</option>
+									 <option value="22">美食达人</option>
+									 <option value="23">游戏达人</option>
+									 <option value="24">软萌</option>
+								 </optgroup>
+							 </select>
+						 </div>
+					 </div>
+					 <div class="clearfix"> </div>
+				 </div>
+			 </div>
 		    
 			  <div class="form-group">
-			     <label for="edit-name">更多简介 <span class="form-required" title="This field is required."></span></label>
-				 <textarea class="form-control bio" id="introductory" placeholder="" rows="3"></textarea>
+			     <label for="edit-name">个性签名 <span class="form-required" title="This field is required."></span></label>
+				  <input type="text" id="introductory" name="introductory" size="60" maxlength="60" class="form-text required">
 			  </div>
 			  <div class="form-actions">
-			    <input type="submit" id="edit-submit" name="op" value="保存" class="btn_1 submit">
+			    <input type="button" id="infoSaveBtn" name="op" value="提交" class="btn_1 submit">
 			  </div>
 		 </form>
 	  </div>
@@ -340,10 +508,19 @@ $(document).ready(function(){
 				  <div class="form-actions">
 				 	
 			    <input type="submit" id="edit-submit" name="op" value="上传" class="btn_1 submit">
-			  </div>
+					  <form id="form" enctype="multipart/form-data">
+						  上传头像(已有头像则会替换):
+						  <input type="file" id="image_input" name="file" />
+						  <input type="button" id="uploadBtn" name="22" value="上传" class="btn_1 submit">
+					  </form>
+					  <div id="imgDiv">
+						  <img id="userImg" />
+					  </div>
+					  <div class="clearfix"></div>
+				  </div>
 			</div>
-				  
-		 <div class="clearfix"></div>		  
+
+
 
 
    </div>
@@ -399,6 +576,24 @@ $(window).load(function() {
     controlNav: "thumbnails"
   });
 });
-</script> 
+</script>
+
+	 <script type="text/javascript">
+         $("#hobby").select2({
+             placeholder:"请选择兴趣标签",
+             tags: true,
+             maximumSelectionLength: 4  //最多能够选择的个数
+         });
+         $("#myLabel").select2({
+             placeholder:"请选择个性标签",
+             tags: true,
+             maximumSelectionLength: 5  //最多能够选择的个数
+         });
+         $("#hopeLabel").select2({
+             placeholder:"想要的标签",
+             tags: true,
+             maximumSelectionLength: 5  //最多能够选择的个数
+         });
+	 </script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,7 +12,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href="css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
@@ -22,6 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!----font-Awesome----->
 <script>
 $(document).ready(function(){
+
     $(".dropdown").hover(            
         function() {
             $('.dropdown-menu', this).stop( true, true ).slideDown("fast");
@@ -32,6 +34,23 @@ $(document).ready(function(){
             $(this).toggleClass('open');       
         }
     );
+  var img="${userInfo.userImg}";
+    //alert("${userInfo.userImg}");
+   if(img==""||img==null){
+       $("#imgDiv").hide();
+   }else{
+       $("#userImg").attr('src',img);
+        $("#userImg").attr('width','50px');
+        $("#userImg").attr('height','50px');
+   }
+      // $("#imgDiv").hide();
+   //}else{
+      // $("#userImg").attr('src',img);
+      // $("#userImg").attr('width','100px');
+      // $("#userImg").attr('height','100px');
+     //$("#imgDiv").show();
+//  }
+
 });
 </script>
 </head>
@@ -47,7 +66,7 @@ $(document).ready(function(){
 				<li class="green">
 					<a href="#" class="icon-home"></a>
 					<ul>
-						<li><a href="login.jsp">注册新账号</a></li>
+						<li><a href="login.jsp">登录注册</a></li>
 					    <li><a href="login.jsp">退出</a></li>
 					</ul>
 				</li>
@@ -71,13 +90,22 @@ $(document).ready(function(){
 		    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
 		        <ul class="nav navbar-nav nav_1">
 		      
-		            <li><a href="index.jsp">${loginUser.userEmail}</a></li>
-		            <li><a href="personalInfo.jsp">个人资料</a></li>
+		            <li><a href="index.jsp">主页</a></li>
+		            <li><a href="userInfoControl">个人资料</a></li>
 		    		 <li><a href="myFriend.jsp">我的好友</a></li>
 
 		          <li><a href="watchTV.jsp">观看直播</a></li>
-		            <li class="last"><a href="aboutUs.jsp">关于我们</a></li>
+		            <li><a href="aboutUs.jsp">关于我们</a></li>
+
+				<li>
+					<div id="imgDiv" style="width:50px; height:50px; border-radius:50%; overflow:hidden;">
+					<a  href="userInfoControl"><img id="userImg"  /></a></div>
+				</li>
+				<%--<li><a href="userInfoControl" style="font-size: 12px">${userInfo.userNickName}</a></li>--%>
 		        </ul>
+				<%--<div id="imgDiv"style="border-radius:50%;width: 40px;height: 40px">--%>
+					<%--<img id="userImg"  />--%>
+				<%--</div>--%>
 		     </div><!-- /.navbar-collapse -->
 		    </nav>
 		   </div> <!-- end pull-right -->
@@ -169,48 +197,52 @@ $(document).ready(function(){
 			<span class="grey-line"></span>
         </div>
         <ul id="flexiselDemo3">
-	      <li><div class="col_1"><a href="view_profile.html">
-			<img src="images/1.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>
-             <div class="layer m_1 hidden-link hover-animation delay1 fade-in">
-                <div class="center-middle">About Him</div>
-             </div>
-             <h3><span class="m_3">Profile ID : MI-387412</span><br>28, Christian, Australia<br>Corporate</h3></a></div>
-          </li>
-		  <li><div class="col_1"><a href="view_profile.html">
-			<img src="images/2.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>
-             <div class="layer m_1 hidden-link hover-animation delay1 fade-in">
-                <div class="center-middle">About Her</div>
-             </div>
-             <h3><span class="m_3">Profile ID : MI-387412</span><br>28, Christian, Australia<br>Corporate</h3></a></div>
-          </li>
-		  <li><div class="col_1"><a href="view_profile.html">
-			<img src="images/3.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>
-             <div class="layer m_1 hidden-link hover-animation delay1 fade-in">
-                <div class="center-middle">About Him</div>
-             </div>
-             <h3><span class="m_3">Profile ID : MI-387412</span><br>28, Christian, Australia<br>Corporate</h3></a></div>
-          </li>
-		  <li><div class="col_1"><a href="view_profile.html">
-			<img src="images/4.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>
-             <div class="layer m_1 hidden-link hover-animation delay1 fade-in">
-                <div class="center-middle">About Her</div>
-             </div>
-             <h3><span class="m_3">Profile ID : MI-387412</span><br>28, Christian, Australia<br>Corporate</h3></a></div>
-          </li>
-		  <li><div class="col_1"><a href="view_profile.html">
-			<img src="images/5.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>
-             <div class="layer m_1 hidden-link hover-animation delay1 fade-in">
-                <div class="center-middle">About Him</div>
-             </div>
-             <h3><span class="m_3">Profile ID : MI-387412</span><br>28, Christian, Australia<br>Corporate</h3></a></div>
-          </li>
-		  <li><div class="col_1"><a href="view_profile.html">
-			<img src="images/6.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>
-             <div class="layer m_1 hidden-link hover-animation delay1 fade-in">
-                <div class="center-middle">About Her</div>
-             </div>
-             <h3><span class="m_3">Profile ID : MI-387412</span><br>28, Christian, Australia<br>Corporate</h3></a></div>
-          </li>
+
+			<c:forEach items="${userList}" var="user">
+				<li><div class="col_1"><a href="personal/${user.userId}">
+					<img src="images/1.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>
+					<div class="layer m_1 hidden-link hover-animation delay1 fade-in">
+						<div class="center-middle">About Him Or Her</div>
+					</div>
+					<h3><span class="m_3">Profile ID :${user.userId}</span><br>${user.userTrusName}<br>${user.userAddress}</h3></a></div>
+				</li>
+			</c:forEach>
+
+		  <%--<li><div class="col_1"><a href="view_profile.html">--%>
+			<%--<img src="images/2.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>--%>
+             <%--<div class="layer m_1 hidden-link hover-animation delay1 fade-in">--%>
+                <%--<div class="center-middle">About Her</div>--%>
+             <%--</div>--%>
+             <%--<h3><span class="m_3">Profile ID : MI-387412</span><br>28, Christian, Australia<br>Corporate</h3></a></div>--%>
+          <%--</li>--%>
+		  <%--<li><div class="col_1"><a href="view_profile.html">--%>
+			<%--<img src="images/3.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>--%>
+             <%--<div class="layer m_1 hidden-link hover-animation delay1 fade-in">--%>
+                <%--<div class="center-middle">About Him</div>--%>
+             <%--</div>--%>
+             <%--<h3><span class="m_3">Profile ID : MI-387412</span><br>28, Christian, Australia<br>Corporate</h3></a></div>--%>
+          <%--</li>--%>
+		  <%--<li><div class="col_1"><a href="view_profile.html">--%>
+			<%--<img src="images/4.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>--%>
+             <%--<div class="layer m_1 hidden-link hover-animation delay1 fade-in">--%>
+                <%--<div class="center-middle">About Her</div>--%>
+             <%--</div>--%>
+             <%--<h3><span class="m_3">Profile ID : MI-387412</span><br>28, Christian, Australia<br>Corporate</h3></a></div>--%>
+          <%--</li>--%>
+		  <%--<li><div class="col_1"><a href="view_profile.html">--%>
+			<%--<img src="images/5.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>--%>
+             <%--<div class="layer m_1 hidden-link hover-animation delay1 fade-in">--%>
+                <%--<div class="center-middle">About Him</div>--%>
+             <%--</div>--%>
+             <%--<h3><span class="m_3">Profile ID : MI-387412</span><br>28, Christian, Australia<br>Corporate</h3></a></div>--%>
+          <%--</li>--%>
+		  <%--<li><div class="col_1"><a href="view_profile.html">--%>
+			<%--<img src="images/6.jpg" alt="" class="hover-animation image-zoom-in img-responsive"/>--%>
+             <%--<div class="layer m_1 hidden-link hover-animation delay1 fade-in">--%>
+                <%--<div class="center-middle">About Her</div>--%>
+             <%--</div>--%>
+             <%--<h3><span class="m_3">Profile ID : MI-387412</span><br>28, Christian, Australia<br>Corporate</h3></a></div>--%>
+          <%--</li>--%>
 	    </ul>
 	    <script type="text/javascript">
 		 $(window).load(function() {
@@ -250,7 +282,7 @@ $(document).ready(function(){
 			<i class="fa fa-heart pink-heart"></i>
 			<i class="fa fa-heart grey-heart"></i>
 			<span class="grey-line"></span>
-        </div>
+	</div>
         <div class="row_1">
 	     <div class="col-md-8 suceess_story">
 	         <ul> 

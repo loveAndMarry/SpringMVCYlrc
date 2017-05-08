@@ -3,14 +3,14 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by 18401606107 on 2017/4/29.
+ * Created by 18401606107 on 2017/5/5.
  */
 @Entity
-@Table(name = "tb_liveroom", schema = "my_ylrc", catalog = "")
+@Table(name = "tb_liveroom", schema = "new_ylrc", catalog = "")
 public class TbLiveroomEntity {
     private int liveRoomId;
-    private int liveRoomOwnerId;
     private String liveRoomFollowerId;
+    private int liveRoomOwnerId;
     private Integer liveRoomState;
 
     @Id
@@ -24,16 +24,6 @@ public class TbLiveroomEntity {
     }
 
     @Basic
-    @Column(name = "LiveRoomOwnerId", nullable = false)
-    public int getLiveRoomOwnerId() {
-        return liveRoomOwnerId;
-    }
-
-    public void setLiveRoomOwnerId(int liveRoomOwnerId) {
-        this.liveRoomOwnerId = liveRoomOwnerId;
-    }
-
-    @Basic
     @Column(name = "LiveRoomFollowerId", nullable = true, length = 200)
     public String getLiveRoomFollowerId() {
         return liveRoomFollowerId;
@@ -41,6 +31,16 @@ public class TbLiveroomEntity {
 
     public void setLiveRoomFollowerId(String liveRoomFollowerId) {
         this.liveRoomFollowerId = liveRoomFollowerId;
+    }
+
+    @Basic
+    @Column(name = "LiveRoomOwnerId", nullable = false)
+    public int getLiveRoomOwnerId() {
+        return liveRoomOwnerId;
+    }
+
+    public void setLiveRoomOwnerId(int liveRoomOwnerId) {
+        this.liveRoomOwnerId = liveRoomOwnerId;
     }
 
     @Basic
@@ -73,8 +73,8 @@ public class TbLiveroomEntity {
     @Override
     public int hashCode() {
         int result = liveRoomId;
-        result = 31 * result + liveRoomOwnerId;
         result = 31 * result + (liveRoomFollowerId != null ? liveRoomFollowerId.hashCode() : 0);
+        result = 31 * result + liveRoomOwnerId;
         result = 31 * result + (liveRoomState != null ? liveRoomState.hashCode() : 0);
         return result;
     }

@@ -3,10 +3,10 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by xxxxx on 2017/4/19.
+ * Created by 18401606107 on 2017/5/5.
  */
 @Entity
-@Table(name = "tb_sorientation", schema = "ylrc", catalog = "")
+@Table(name = "tb_sorientation", schema = "new_ylrc", catalog = "")
 public class TbSorientationEntity {
     private int oid;
     private String sOrientation;

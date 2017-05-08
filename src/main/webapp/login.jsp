@@ -314,7 +314,7 @@
 								<input type="checkbox" value="None" id="checkbox1" name="check" />
 								<label for="checkbox1"></label>
 							</div>
-							<span class="text">Remember me</span>
+
 							<button type="button" class="btn btn-default" id="loginButton" >登录</button>
 				</div>
 					</form>

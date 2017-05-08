@@ -4,21 +4,21 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by 18401606107 on 2017/4/29.
+ * Created by 18401606107 on 2017/5/5.
  */
 @Entity
-@Table(name = "tb_dynamics", schema = "my_ylrc", catalog = "")
+@Table(name = "tb_dynamics", schema = "new_ylrc", catalog = "")
 public class TbDynamicsEntity {
     private int dynamicId;
-    private int dynamicOwnerId;
-    private String dynamicContentText;
-    private String dynamicContentImgs;
     private String dynamciContentVideo;
+    private String dynamicCommentsId;
+    private String dynamicContentImgs;
+    private String dynamicContentText;
     private String dynamicContentUrl;
     private String dynamicLikerId;
-    private String dynamicCommentsId;
-    private Timestamp dynamicTime;
+    private int dynamicOwnerId;
     private Integer dynamicState;
+    private Timestamp dynamicTime;
 
     @Id
     @Column(name = "DynamicId", nullable = false)
@@ -31,23 +31,23 @@ public class TbDynamicsEntity {
     }
 
     @Basic
-    @Column(name = "DynamicOwnerId", nullable = false)
-    public int getDynamicOwnerId() {
-        return dynamicOwnerId;
+    @Column(name = "DynamciContentVideo", nullable = true, length = 30)
+    public String getDynamciContentVideo() {
+        return dynamciContentVideo;
     }
 
-    public void setDynamicOwnerId(int dynamicOwnerId) {
-        this.dynamicOwnerId = dynamicOwnerId;
+    public void setDynamciContentVideo(String dynamciContentVideo) {
+        this.dynamciContentVideo = dynamciContentVideo;
     }
 
     @Basic
-    @Column(name = "DynamicContentText", nullable = false, length = 300)
-    public String getDynamicContentText() {
-        return dynamicContentText;
+    @Column(name = "DynamicCommentsId", nullable = true, length = 100)
+    public String getDynamicCommentsId() {
+        return dynamicCommentsId;
     }
 
-    public void setDynamicContentText(String dynamicContentText) {
-        this.dynamicContentText = dynamicContentText;
+    public void setDynamicCommentsId(String dynamicCommentsId) {
+        this.dynamicCommentsId = dynamicCommentsId;
     }
 
     @Basic
@@ -61,13 +61,13 @@ public class TbDynamicsEntity {
     }
 
     @Basic
-    @Column(name = "DynamciContentVideo", nullable = true, length = 30)
-    public String getDynamciContentVideo() {
-        return dynamciContentVideo;
+    @Column(name = "DynamicContentText", nullable = false, length = 300)
+    public String getDynamicContentText() {
+        return dynamicContentText;
     }
 
-    public void setDynamciContentVideo(String dynamciContentVideo) {
-        this.dynamciContentVideo = dynamciContentVideo;
+    public void setDynamicContentText(String dynamicContentText) {
+        this.dynamicContentText = dynamicContentText;
     }
 
     @Basic
@@ -91,23 +91,13 @@ public class TbDynamicsEntity {
     }
 
     @Basic
-    @Column(name = "DynamicCommentsId", nullable = true, length = 100)
-    public String getDynamicCommentsId() {
-        return dynamicCommentsId;
+    @Column(name = "DynamicOwnerId", nullable = false)
+    public int getDynamicOwnerId() {
+        return dynamicOwnerId;
     }
 
-    public void setDynamicCommentsId(String dynamicCommentsId) {
-        this.dynamicCommentsId = dynamicCommentsId;
-    }
-
-    @Basic
-    @Column(name = "DynamicTime", nullable = false)
-    public Timestamp getDynamicTime() {
-        return dynamicTime;
-    }
-
-    public void setDynamicTime(Timestamp dynamicTime) {
-        this.dynamicTime = dynamicTime;
+    public void setDynamicOwnerId(int dynamicOwnerId) {
+        this.dynamicOwnerId = dynamicOwnerId;
     }
 
     @Basic
@@ -120,6 +110,16 @@ public class TbDynamicsEntity {
         this.dynamicState = dynamicState;
     }
 
+    @Basic
+    @Column(name = "DynamicTime", nullable = false)
+    public Timestamp getDynamicTime() {
+        return dynamicTime;
+    }
+
+    public void setDynamicTime(Timestamp dynamicTime) {
+        this.dynamicTime = dynamicTime;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -129,20 +129,20 @@ public class TbDynamicsEntity {
 
         if (dynamicId != that.dynamicId) return false;
         if (dynamicOwnerId != that.dynamicOwnerId) return false;
-        if (dynamicContentText != null ? !dynamicContentText.equals(that.dynamicContentText) : that.dynamicContentText != null)
+        if (dynamciContentVideo != null ? !dynamciContentVideo.equals(that.dynamciContentVideo) : that.dynamciContentVideo != null)
+            return false;
+        if (dynamicCommentsId != null ? !dynamicCommentsId.equals(that.dynamicCommentsId) : that.dynamicCommentsId != null)
             return false;
         if (dynamicContentImgs != null ? !dynamicContentImgs.equals(that.dynamicContentImgs) : that.dynamicContentImgs != null)
             return false;
-        if (dynamciContentVideo != null ? !dynamciContentVideo.equals(that.dynamciContentVideo) : that.dynamciContentVideo != null)
+        if (dynamicContentText != null ? !dynamicContentText.equals(that.dynamicContentText) : that.dynamicContentText != null)
             return false;
         if (dynamicContentUrl != null ? !dynamicContentUrl.equals(that.dynamicContentUrl) : that.dynamicContentUrl != null)
             return false;
         if (dynamicLikerId != null ? !dynamicLikerId.equals(that.dynamicLikerId) : that.dynamicLikerId != null)
             return false;
-        if (dynamicCommentsId != null ? !dynamicCommentsId.equals(that.dynamicCommentsId) : that.dynamicCommentsId != null)
-            return false;
-        if (dynamicTime != null ? !dynamicTime.equals(that.dynamicTime) : that.dynamicTime != null) return false;
         if (dynamicState != null ? !dynamicState.equals(that.dynamicState) : that.dynamicState != null) return false;
+        if (dynamicTime != null ? !dynamicTime.equals(that.dynamicTime) : that.dynamicTime != null) return false;
 
         return true;
     }
@@ -150,15 +150,15 @@ public class TbDynamicsEntity {
     @Override
     public int hashCode() {
         int result = dynamicId;
-        result = 31 * result + dynamicOwnerId;
-        result = 31 * result + (dynamicContentText != null ? dynamicContentText.hashCode() : 0);
-        result = 31 * result + (dynamicContentImgs != null ? dynamicContentImgs.hashCode() : 0);
         result = 31 * result + (dynamciContentVideo != null ? dynamciContentVideo.hashCode() : 0);
+        result = 31 * result + (dynamicCommentsId != null ? dynamicCommentsId.hashCode() : 0);
+        result = 31 * result + (dynamicContentImgs != null ? dynamicContentImgs.hashCode() : 0);
+        result = 31 * result + (dynamicContentText != null ? dynamicContentText.hashCode() : 0);
         result = 31 * result + (dynamicContentUrl != null ? dynamicContentUrl.hashCode() : 0);
         result = 31 * result + (dynamicLikerId != null ? dynamicLikerId.hashCode() : 0);
-        result = 31 * result + (dynamicCommentsId != null ? dynamicCommentsId.hashCode() : 0);
-        result = 31 * result + (dynamicTime != null ? dynamicTime.hashCode() : 0);
+        result = 31 * result + dynamicOwnerId;
         result = 31 * result + (dynamicState != null ? dynamicState.hashCode() : 0);
+        result = 31 * result + (dynamicTime != null ? dynamicTime.hashCode() : 0);
         return result;
     }
 }
