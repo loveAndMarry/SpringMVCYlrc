@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Arrays;
 
 /**
- * Created by 18401606107 on 2017/5/1.
+ * Created by 18401606107 on 2017/5/5.
  */
 @Entity
 @Table(name = "tb_comment", schema = "new_ylrc", catalog = "")

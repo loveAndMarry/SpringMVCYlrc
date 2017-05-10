@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
- * Created by 18401606107 on 2017/5/1.
+ * Created by 18401606107 on 2017/5/5.
  */
 @Entity
 @Table(name = "tb_dynamic", schema = "new_ylrc", catalog = "")

@@ -3,7 +3,7 @@ package ylrc.model;
 import javax.persistence.*;
 
 /**
- * Created by 18401606107 on 2017/5/1.
+ * Created by 18401606107 on 2017/5/5.
  */
 @Entity
 @Table(name = "tb_hobby", schema = "new_ylrc", catalog = "")
