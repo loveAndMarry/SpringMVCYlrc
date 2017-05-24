@@ -97,7 +97,7 @@ $(document).ready(function(){
 
    <div class="col-md-9 members_box">
      <h1>Friends List</h1>
-     <p>Here are XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+     <p>Here are your friends</p>
        <div class="members_box1">
 	     <div class="col_1_of_3 span_1_of_3  phone_1">
 	      <ul class="phone">
@@ -122,214 +122,69 @@ $(document).ready(function(){
 	     </div>
 	     <div class="clearfix"> </div>
 	   </div>
-	   <div class="profile_top"><a href="view_profile.html">
-      <h2>254879</h2>
-	    <div class="col-sm-3 profile_left-top">
-	    	<img src="images/a6.jpg" class="img-responsive" alt=""/>
-	    </div>
-	    <div class="col-sm-3">
-	      <ul class="login_details1">
-			 <li>Last Login : 5 days ago</li>
-			 <li><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." More....</p></li>
-		  </ul>
-	    </div>
-	    <div class="col-sm-6">
-	    	<table class="table_working_hours">
-	        	<tbody>
-	        		<tr class="opened_1">
-						<td class="day_label1">Age / Height :</td>
-						<td class="day_value">28, 5ft 5in / 163cm</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Last Login :</td>
-						<td class="day_value">4 hours ago</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Religion :</td>
-						<td class="day_value">Sikh</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Marital Status :</td>
-						<td class="day_value">Single</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Location :</td>
-						<td class="day_value">India</td>
-					</tr>
-				    <tr class="closed">
-						<td class="day_label1">Profile Created by :</td>
-						<td class="day_value closed"><span>Self</span></td>
-					</tr>
-				    <tr class="closed">
-						<td class="day_label1">Education :</td>
-						<td class="day_value closed"><span>Engineering</span></td>
-					</tr>
-			    </tbody>
-		   </table>
-		   <div class="buttons">
-			   <div class="vertical">Send Mail</div>
-			   <div class="vertical">View dynamics</div>
-			   <div class="vertical">Send Interest</div>
-		   </div>
-	    </div>
-	    <div class="clearfix"> </div>
-    </a></div>
-    <div class="profile_top"><a href="view_profile.html">
-      <h2>254879</h2>
-	    <div class="col-sm-3 profile_left-top">
-	    	<img src="images/a4.jpg" class="img-responsive" alt=""/>
-	    </div>
-	    <div class="col-sm-3">
-	      <ul class="login_details1">
-			 <li>Last Login : 5 days ago</li>
-			 <li><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." More....</p></li>
-		  </ul>
-	    </div>
-	    <div class="col-sm-6">
-	    	<table class="table_working_hours">
-	        	<tbody>
-	        		<tr class="opened_1">
-						<td class="day_label1">Age / Height :</td>
-						<td class="day_value">28, 5ft 5in / 163cm</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Last Login :</td>
-						<td class="day_value">4 hours ago</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Religion :</td>
-						<td class="day_value">Sikh</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Marital Status :</td>
-						<td class="day_value">Single</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Location :</td>
-						<td class="day_value">India</td>
-					</tr>
-				    <tr class="closed">
-						<td class="day_label1">Profile Created by :</td>
-						<td class="day_value closed"><span>Self</span></td>
-					</tr>
-				    <tr class="closed">
-						<td class="day_label1">Education :</td>
-						<td class="day_value closed"><span>Engineering</span></td>
-					</tr>
-			    </tbody>
-		   </table>
-		   <div class="buttons">
-			   <div class="vertical">Send Mail</div>
-			   <div class="vertical">View dynamics</div>
-			   <div class="vertical">Send Interest</div>
-		   </div>
-	    </div>
-	    <div class="clearfix"> </div>
-    </a></div>
-    <div class="profile_top"><a href="view_profile.html">
-      <h2>254879</h2>
-	    <div class="col-sm-3 profile_left-top">
-	    	<img src="images/a5.jpg" class="img-responsive" alt=""/>
-	    </div>
-	    <div class="col-sm-3">
-	      <ul class="login_details1">
-			 <li>Last Login : 5 days ago</li>
-			 <li><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." More....</p></li>
-		  </ul>
-	    </div>
-	    <div class="col-sm-6">
-	    	<table class="table_working_hours">
-	        	<tbody>
-	        		<tr class="opened_1">
-						<td class="day_label1">Age / Height :</td>
-						<td class="day_value">28, 5ft 5in / 163cm</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Last Login :</td>
-						<td class="day_value">4 hours ago</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Religion :</td>
-						<td class="day_value">Sikh</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Marital Status :</td>
-						<td class="day_value">Single</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Location :</td>
-						<td class="day_value">India</td>
-					</tr>
-				    <tr class="closed">
-						<td class="day_label1">Profile Created by :</td>
-						<td class="day_value closed"><span>Self</span></td>
-					</tr>
-				    <tr class="closed">
-						<td class="day_label1">Education :</td>
-						<td class="day_value closed"><span>Engineering</span></td>
-					</tr>
-			    </tbody>
-		   </table>
-		   <div class="buttons">
-			   <div class="vertical">Send Mail</div>
-			   <div class="vertical">View dynamics</div>
-			   <div class="vertical">Send Interest</div>
-		   </div>
-	    </div>
-	    <div class="clearfix"> </div>
-    </a></div>
-    <div class="profile_top profile_top1"><a href="view_profile.html">
-      <h2>254879</h2>
-	    <div class="col-sm-3 profile_left-top">
-	    	<img src="images/a7.jpg" class="img-responsive" alt=""/>
-	    </div>
-	    <div class="col-sm-3">
-	      <ul class="login_details1">
-			 <li>Last Login : 5 days ago</li>
-			 <li><p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor." More....</p></li>
-		  </ul>
-	    </div>
-	    <div class="col-sm-6">
-	    	<table class="table_working_hours">
-	        	<tbody>
-	        		<tr class="opened_1">
-						<td class="day_label1">Age / Height :</td>
-						<td class="day_value">28, 5ft 5in / 163cm</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Last Login :</td>
-						<td class="day_value">4 hours ago</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Religion :</td>
-						<td class="day_value">Sikh</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Marital Status :</td>
-						<td class="day_value">Single</td>
-					</tr>
-				    <tr class="opened">
-						<td class="day_label1">Location :</td>
-						<td class="day_value">India</td>
-					</tr>
-				    <tr class="closed">
-						<td class="day_label1">Profile Created by :</td>
-						<td class="day_value closed"><span>Self</span></td>
-					</tr>
-				    <tr class="closed">
-						<td class="day_label1">Education :</td>
-						<td class="day_value closed"><span>Engineering</span></td>
-					</tr>
-			    </tbody>
-		   </table>
-		   <div class="buttons">
-			   <div class="vertical">Send Mail</div>
-			   <div class="vertical">View dynamics</div>
-			   <div class="vertical">Send Interest</div>
-		   </div>
-	    </div>
-	    <div class="clearfix"> </div>
-    </a></div>
+	   <div class="profile_top"><a href="#">
+		   <!-- 如果用户列表为空 -->
+		   <c:if test="${empty userInformationList}">
+			   <div class="alert alert-warning" role="alert">
+				   <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>目前还没有好友
+			   </div>
+		   </c:if>
+		   <c:forEach items="${userInformationList}" var="user">
+			   <div class="col-md-9 profile_left2">
+				   <div class="profile_top"><a href="view_profile.html">
+					   <h2>${user.userId} | Profile Created for self</h2>
+					   <div class="col-sm-3 profile_left-top">
+						   <img src="${user.userImg}" class="img-responsive" alt=""/>
+					   </div>
+					   <div class="col-sm-3">
+						   <ul class="login_details1">
+							   <li>我的格言</li>
+							   <li><p>${user.userIntroduction}</p></li>
+						   </ul>
+					   </div>
+					   <div class="col-sm-6">
+						   <table class="table_working_hours">
+							   <tbody>
+							   <tr class="opened_1">
+								   <td class="day_label1">昵称 :</td>
+								   <td class="day_value">${user.userNickName}</td>
+							   </tr>
+							   <tr class="opened">
+								   <td class="day_label1">性别 :</td>
+								   <td class="day_value">${user.userSex}</td>
+							   </tr>
+							   <tr class="opened">
+								   <td class="day_label1">生日 :</td>
+								   <td class="day_value">${user.userBirthday}</td>
+							   </tr>
+							   <tr class="opened">
+								   <td class="day_label1">所在地 :</td>
+								   <td class="day_value">${user.userAddress}</td>
+							   </tr>
+							   <tr class="opened">
+								   <td class="day_label1">职业 :</td>
+								   <td class="day_value">${user.userJob}</td>
+							   </tr>
+							   <tr class="closed">
+								   <td class="day_label1">薪资 :</td>
+								   <td class="day_value closed"><span>${user.userSalary}</span></td>
+							   </tr>
+							   <tr class="closed">
+								   <td class="day_label1">爱好 :</td>
+								   <td class="day_value closed"><span>${user.userHobby}</span></td>
+							   </tr>
+							   </tbody>
+						   </table>
+						   <div class="buttons">
+							   <div class="vertical">发送消息</div>
+							   <div class="vertical">个人动态</div>
+
+						   </div>
+					   </div>
+					   <div class="clearfix"></div>
+				   </a></div>
+			   </div>
+		   </c:forEach>
    </div>
    <div class="clearfix"> </div>
   </div>

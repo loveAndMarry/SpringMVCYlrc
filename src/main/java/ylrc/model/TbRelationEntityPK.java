@@ -5,21 +5,11 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * Created by 18401606107 on 2017/4/29.
+ * Created by 18401606107 on 2017/5/5.
  */
 public class TbRelationEntityPK implements Serializable {
-    private int userAId;
     private int userBId;
-
-    @Column(name = "userAId", nullable = false)
-    @Id
-    public int getUserAId() {
-        return userAId;
-    }
-
-    public void setUserAId(int userAId) {
-        this.userAId = userAId;
-    }
+    private int userAId;
 
     @Column(name = "userBId", nullable = false)
     @Id
@@ -31,6 +21,16 @@ public class TbRelationEntityPK implements Serializable {
         this.userBId = userBId;
     }
 
+    @Column(name = "userAId", nullable = false)
+    @Id
+    public int getUserAId() {
+        return userAId;
+    }
+
+    public void setUserAId(int userAId) {
+        this.userAId = userAId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -38,16 +38,16 @@ public class TbRelationEntityPK implements Serializable {
 
         TbRelationEntityPK that = (TbRelationEntityPK) o;
 
-        if (userAId != that.userAId) return false;
         if (userBId != that.userBId) return false;
+        if (userAId != that.userAId) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = userAId;
-        result = 31 * result + userBId;
+        int result = userBId;
+        result = 31 * result + userAId;
         return result;
     }
 }

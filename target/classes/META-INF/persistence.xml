@@ -3,19 +3,33 @@
 
     <persistence-unit name="defaultPersistenceUnit"  transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>ylrc.model.ImgtestEntity</class>
         <class>ylrc.model.TbBloodtypeEntity</class>
         <class>ylrc.model.TbCommentEntity</class>
+        <class>ylrc.model.TbCommentsEntity</class>
         <class>ylrc.model.TbConstellationEntity</class>
+        <class>ylrc.model.TbDnviewEntity</class>
         <class>ylrc.model.TbDynamicEntity</class>
+        <class>ylrc.model.TbDynamicsEntity</class>
         <class>ylrc.model.TbFriendlistEntity</class>
         <class>ylrc.model.TbHobbyEntity</class>
+        <class>ylrc.model.TbHobbysEntity</class>
         <class>ylrc.model.TbJobEntity</class>
         <class>ylrc.model.TbLabelEntity</class>
+        <class>ylrc.model.TbLabelsEntity</class>
+        <class>ylrc.model.TbLiveroomEntity</class>
         <class>ylrc.model.TbNationEntity</class>
+        <class>ylrc.model.TbNationsEntity</class>
         <class>ylrc.model.TbOriEntity</class>
+        <class>ylrc.model.TbOrisEntity</class>
+        <class>ylrc.model.TbRelationEntity</class>
         <class>ylrc.model.TbSalaryEntity</class>
+        <class>ylrc.model.TbSorientationEntity</class>
         <class>ylrc.model.TbUseraccountEntity</class>
+        <class>ylrc.model.TbUserinfoEntity</class>
         <class>ylrc.model.TbUserinformationEntity</class>
+        <class>ylrc.model.TbVerEntity</class>
+
 
         <properties>
             <!-- 使用MySQL方言 -->

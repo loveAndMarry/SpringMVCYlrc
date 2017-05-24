@@ -1,9 +1,10 @@
 package ylrc.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 /**
- * Created by 18401606107 on 2017/5/1.
+ * Created by 18401606107 on 2017/5/5.
  */
 @Entity
 @Table(name = "tb_userinformation", schema = "new_ylrc", catalog = "")
@@ -27,6 +28,7 @@ public class TbUserinformationEntity {
     private String userIDnum;
     private String userImg;
     private String userIntroduction;
+    private Date userBirthday;
 
     @Id
     @Column(name = "userId", nullable = false)
@@ -218,6 +220,16 @@ public class TbUserinformationEntity {
         this.userIntroduction = userIntroduction;
     }
 
+    @Basic
+    @Column(name = "userBirthday", nullable = true)
+    public Date getUserBirthday() {
+        return userBirthday;
+    }
+
+    public void setUserBirthday(Date userBirthday) {
+        this.userBirthday = userBirthday;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -248,6 +260,7 @@ public class TbUserinformationEntity {
         if (userImg != null ? !userImg.equals(that.userImg) : that.userImg != null) return false;
         if (userIntroduction != null ? !userIntroduction.equals(that.userIntroduction) : that.userIntroduction != null)
             return false;
+        if (userBirthday != null ? !userBirthday.equals(that.userBirthday) : that.userBirthday != null) return false;
 
         return true;
     }
@@ -273,6 +286,7 @@ public class TbUserinformationEntity {
         result = 31 * result + (userIDnum != null ? userIDnum.hashCode() : 0);
         result = 31 * result + (userImg != null ? userImg.hashCode() : 0);
         result = 31 * result + (userIntroduction != null ? userIntroduction.hashCode() : 0);
+        result = 31 * result + (userBirthday != null ? userBirthday.hashCode() : 0);
         return result;
     }
 }
