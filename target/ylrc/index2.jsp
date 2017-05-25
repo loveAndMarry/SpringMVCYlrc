@@ -47,7 +47,7 @@ $(document).ready(function(){
 				<li class="green">
 					<a href="#" class="icon-home"></a>
 					<ul>
-						<li><a href="login.jsp">注册新账号</a></li>
+						<li><a href="login.jsp"></a></li>
 					    <li><a href="login.jsp">退出</a></li>
 					</ul>
 				</li>
