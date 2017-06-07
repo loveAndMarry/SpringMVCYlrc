@@ -90,7 +90,7 @@ $(document).ready(function(){
   <div class="container">
     <div class="banner_info">
       <h3>缘来如此，缘来是你</h3>
-      <a href="" class="hvr-shutter-out-horizontal" style="background:#ff8888">开启直播！</a>
+      <a href="review.jsp" class="hvr-shutter-out-horizontal" style="background:#ff8888">记录心情</a>
     </div>
   </div>
   <div class="profile_search">

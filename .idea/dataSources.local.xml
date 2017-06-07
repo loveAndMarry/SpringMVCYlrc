@@ -11,5 +11,10 @@
       <user-name>root</user-name>
       <introspection-schemas>*:new_ylrc</introspection-schemas>
     </data-source>
+    <data-source name="defaultPersistenceUnit/Hibernate" uuid="bdd04d7c-fd64-420e-9d6d-e09b177e64de">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+    </data-source>
   </component>
 </project>

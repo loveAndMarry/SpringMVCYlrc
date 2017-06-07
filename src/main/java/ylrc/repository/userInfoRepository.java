@@ -29,4 +29,11 @@ public interface userInfoRepository extends JpaRepository<TbUserinformationEntit
 
     @Query("select u from TbUserinformationEntity u where u.userSex = :qUserSex and u.userSexOri = :qUserSexOri")
     public List<TbUserinformationEntity> findByUserSexAndUserSexOri(@Param("qUserSex") String userSex, @Param("qUserSexOri") Integer userSexOri);
+
+
+    @Query("select u from TbUserinformationEntity u where u.userSex = :qUserSex and u.userJob = :qUserJob and u.userAddress = :qUserAddress and u.userSalary = :qUserSalary")
+    public List<TbUserinformationEntity> findByUserSexAndUserJobAndUserAddressAndUserSalary(@Param("qUserSex")String userSex, @Param("qUserJob")String userJob,@Param("qUserAddress")String userAddress,@Param("qUserSalary")Integer userSalary);
+
+    @Query("select u from TbUserinformationEntity u where u.userSex = :qUserSex and u.userJob = :qUserJob and u.userAddress = :qUserAddress")
+    public List<TbUserinformationEntity> findByUserSexAndUserJobAndUserAddress(@Param("qUserSex")String userSex, @Param("qUserJob")String userJob,@Param("qUserAddress")String userAddress);
 }

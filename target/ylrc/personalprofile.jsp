@@ -21,7 +21,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet" href="css/select2.min.css" type="text/css" />
     <script type="text/javascript" src="js/select2.min.js"></script>
-    <script src="js/userInfo.js"></script>
     <!----font-Awesome----->
     <script>
         $(document).ready(function(){
@@ -35,7 +34,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     $(this).toggleClass('open');
                 }
             );
+            var sexori = ${user.userSexOri};
+
+            var sexoris = new Array("","想约个帅哥", "想聊个妹子", "帅哥美女都是我的菜", "目前只想交个朋友");
+
+            for (i = 1; i < 5; i++) {
+                if (sexori == i) {
+                    $("#sexori").val(sexoris[i]);
+                }
+            }
+
+            var salary = ${user.userSalary};
+
+            var salarys = new Array("","小于3000", "3000-5000", "5000-10000", "10000-50000", "大于50000");
+
+            for ( j= 1; j < 6; j++) {
+                if (salary == j) {
+                    $("#salary").val(salarys[j]);
+                }
+            }
         });
+
     </script>
 </head>
 <body>
@@ -101,11 +120,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <form method="post" action="infoSave" id="infoForm" name="infoForm">
                         <div class="form-group">
                             <label for="edit-name">昵称 <span class="form-required" title="This field is required.">*</span></label>
-                            <input type="text" id="editName" name="editName"  size="60" maxlength="60" class="form-text required">
+                            <input type="text" id="editName" name="editName"  value="${user.userNickName}" size="60" maxlength="60" class="form-text required">
                         </div>
                         <div class="form-group">
                             <label for="edit-name">性别<span class="form-required" title="This field is required.">*</span></label>
-                            <input type="text" id="sex" name="height" size="20" maxlength="20" class="form-text required">
+                            <input type="text" id="sex" name="height" value="${user.userSex}" size="20" maxlength="20" class="form-text required">
                         </div>
                         <div class="form-group">
                             <label for="edit-name">性取向<span class="form-required" title="This field is required.">*</span></label>
@@ -113,47 +132,47 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="form-group">
                             <label for="edit-name">出生日期<span class="form-required" title="This field is required.">*</span></label>
-                            <input type="text" id="birthday" name="weight" size="20" maxlength="20" class="form-text required">
+                            <input type="text" id="birthday" name="weight" value= "${user.userBirthday}" size="20" maxlength="20" class="form-text required">
                         </div>
                         <div class="form-group">
                             <label for="edit-name">身高<span class="form-required" title="This field is required.">*</span></label>
-                            <input type="text" id="height" name="height" size="20" maxlength="20" class="form-text required">
+                            <input type="text" id="height" name="height" value="${user.userHeight}" size="20" maxlength="20" class="form-text required">
                         </div>
                         <div class="form-group">
                             <label for="edit-name">体重(kg)<span class="form-required" title="This field is required.">*</span></label>
-                            <input type="text" id="weight" name="weight" size="20" maxlength="20" class="form-text required">
+                            <input type="text" id="weight" name="weight" value="${user.userWeight}" size="20" maxlength="20" class="form-text required">
                         </div>
                         <div class="form-group">
                             <label for="edit-name">所在地区<span class="form-required" title="This field is required.">*</span></label>
-                            <input type="text" id="region" name="weight" size="20" maxlength="20" class="form-text required">
+                            <input type="text" id="region" name="weight" value="${user.userAddress}" size="20" maxlength="20" class="form-text required">
                         </div>
                         <div class="form-group">
                             <label for="edit-name">血型<span class="form-required" title="This field is required.">*</span></label>
-                            <input type="text" id="bloodType" name="weight" size="20" maxlength="20" class="form-text required">
+                            <input type="text" id="bloodType" name="weight" value="${user.userBloodType}" size="20" maxlength="20" class="form-text required">
                         </div>
                         <div class="form-group">
                             <label for="edit-name">职业<span class="form-required" title="This field is required.">*</span></label>
-                            <input type="text" id="job" name="weight" size="20" maxlength="20" class="form-text required">
+                            <input type="text" id="job" name="weight" value="${user.userJob}" size="20" maxlength="20" class="form-text required">
                         </div>
                         <div class="form-group">
                             <label for="edit-name">薪资<span class="form-required" title="This field is required.">*</span></label>
-                            <input type="text" id="salary" name="weight" size="20" maxlength="20" class="form-text required">
+                            <input type="text" id="salary" name="weight"  size="20" maxlength="20" class="form-text required">
                         </div>
                         <div class="form-group">
                             <label for="edit-name">兴趣<span class="form-required" title="This field is required.">*</span></label>
-                            <input type="text" id="hobby" name="weight" size="20" maxlength="20" class="form-text required">
+                            <input type="text" id="hobby" name="weight" value="${user.userHobby}" size="20" maxlength="20" class="form-text required">
                         </div>
                         <div class="form-group">
                             <label for="edit-name">他（她）的个性<span class="form-required" title="This field is required.">*</span></label>
-                            <input type="text" id="myLabel" name="weight" size="20" maxlength="20" class="form-text required">
+                            <input type="text" id="myLabel" name="weight" value="${user.userLabel}" size="20" maxlength="20" class="form-text required">
                         </div>
                         <div class="form-group">
                             <label for="edit-name">他（她）喜欢的类型<span class="form-required" title="This field is required.">*</span></label>
-                            <input type="text" id="hopeLabel" name="weight" size="20" maxlength="20" class="form-text required">
+                            <input type="text" id="hopeLabel" name="weight" value="${user.userHopeLabel}" size="20" maxlength="20" class="form-text required">
                         </div>
                         <div class="form-group">
                             <label for="edit-name">他（她）的格言<span class="form-required" title="This field is required.">*</span></label>
-                            <input type="text" id="introductory" name="weight" size="20" maxlength="20" class="form-text required">
+                            <input type="text" id="introductory" name="weight" value="${user.userIntroduction}" size="20" maxlength="20" class="form-text required">
                         </div>
                     </form>
                 </div>

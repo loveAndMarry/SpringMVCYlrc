@@ -2,6 +2,7 @@
   <artifact type="exploded-war" name="SpringMVCYlrc:war exploded">
     <output-path>$PROJECT_DIR$/target/ylrc</output-path>
     <root id="root">
+      <element id="module-output" name="SpringMVCYlrc" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="SpringMVCYlrc" />
@@ -55,7 +56,6 @@
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.39" />
         </element>
       </element>
-      <element id="module-output" name="SpringMVCYlrc" />
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/ylrc/META-INF/MANIFEST.MF" />
       </element>
